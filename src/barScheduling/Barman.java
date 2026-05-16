@@ -19,6 +19,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.TimeUnit;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class Barman extends Thread {
 
@@ -337,6 +339,32 @@ public class Barman extends Thread {
     
     private void recordCompletedOrder(DrinkOrder order) throws IOException {
     	// THIS IS THE ONLY FUNCTION YOU MAY CHANGE
+        //this is where the data collection for testing and stuff goes
+
+        //write results into CVS files
+        File allResults = new File("Results");
+        String file = "Results" + "Scheduler" +".csv" ;
+
+        long arrivalTime =order.getArrivalTime();
+        long startTime = order.getServiceStartTime();
+        long completionTime = order.getCompletionTime();
+        long waitingTime = order.getWaitingTime();
+        long responseTime = order.getResponseTime();
+        long turnaroundTime = order.getTurnaroundTime();
+        long executionTime = order.getExecutionTime();
+        long imbilingTime = order.getImbibingTime();
+
+        
+        //append to specific shedulling files
+        //also remember its not pre-emptive
+
+        //FCFS
+
+        //SJF
+
+        //Priority
+
+        //MLFQ
     }
 
 }
