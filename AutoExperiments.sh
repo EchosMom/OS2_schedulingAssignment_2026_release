@@ -12,6 +12,6 @@ for patrons in "${PATRONS[@]}"; do
             java -cp bin barScheduling.SchedulingSimulation $patrons $schedulers 0 $SEED
         done
     done
-done
+done 
 
 echo "Done."
