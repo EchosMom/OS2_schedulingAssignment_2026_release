@@ -344,7 +344,7 @@ public class Barman extends Thread {
 
         //long arrivalTime =order.getArrivalTime();
         //long startTime = order.getServiceStartTime();
-        //long completionTime = order.getCompletionTime();
+        long completionTime = order.getCompletionTime();
         long waitingTime = order.getWaitingTime();
         long responseTime = order.getResponseTime();
         long turnaroundTime = order.getTurnaroundTime();
@@ -371,6 +371,17 @@ public class Barman extends Thread {
             order.getQueueLevel()
         ));
         writer.close();
+
+        //throughput file and writer
+        try(FileWriter throughputWriter = new FileWriter(folder + File.separator + "ThroughputData_"+schedulerName+".csv",true)){
+            File throughputFile = new File(folder + File.separator + "ThroughputData_"+schedulerName+".csv");
+            if(throughputFile.length() == 0){
+                throughputWriter.write(String.format("%d,%d\n",
+                    completionTime,
+                    order.getSequenceNumber()+1
+                ));
+            }
+        }
 
 
    
