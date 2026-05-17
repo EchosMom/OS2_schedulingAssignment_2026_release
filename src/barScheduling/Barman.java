@@ -20,7 +20,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.io.File;
-import java.io.FileNotFoundException;
+
 import java.io.FileWriter;
 
 public class Barman extends Thread {
@@ -49,6 +49,9 @@ public class Barman extends Thread {
     private static final long AGING_THRESHOLD = 4000; // ms
 
     private final String schedulerName;
+
+    //tracks all drinks served
+    private int totalDrinksServed = 0;
 
  
 
@@ -373,12 +376,14 @@ public class Barman extends Thread {
         writer.close();
 
         //throughput file and writer
+         String tFileName = folder + File.separator + "ThroughputData_"+schedulerName+".csv";
+         totalDrinksServed++;
         try(FileWriter throughputWriter = new FileWriter(folder + File.separator + "ThroughputData_"+schedulerName+".csv",true)){
-            File throughputFile = new File(folder + File.separator + "ThroughputData_"+schedulerName+".csv");
+            File throughputFile = new File(tFileName);
             if(throughputFile.length() == 0){
                 throughputWriter.write(String.format("%d,%d\n",
                     completionTime,
-                    order.getSequenceNumber()+1
+                    totalDrinksServed
                 ));
             }
         }
