@@ -21,6 +21,7 @@ import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 
 public class Barman extends Thread {
 
@@ -341,10 +342,6 @@ public class Barman extends Thread {
     	// THIS IS THE ONLY FUNCTION YOU MAY CHANGE
         //this is where the data collection for testing and stuff goes
 
-        //write results into CVS files
-        File allResults = new File("Results");
-        String file = "Results" + "Scheduler" +".csv" ;
-
         long arrivalTime =order.getArrivalTime();
         long startTime = order.getServiceStartTime();
         long completionTime = order.getCompletionTime();
@@ -354,17 +351,29 @@ public class Barman extends Thread {
         long executionTime = order.getExecutionTime();
         long imbilingTime = order.getImbibingTime();
 
+        //write results into CVS files
+        File allResults = new File("Results");
+        String fileName = "Results" + schedulerName +".csv" ;
         
-        //append to specific shedulling files
-        //also remember its not pre-emptive
+        FileWriter writer = new FileWriter(fileName, true);
+        File file = new File(fileName);
+        if(file.length() == 0){
+            writer.write("PatronID, DrinkNum, ResponseTime, WaitingTime, TurnaroundTime, ExecutionTime, QueueLevel\n");
+        }
+        
+        writer.write(String.format("%d,%d,%d,%d,%d,%d,%d\n",
+            order.getOrderer(),
+            order.getSequenceNumber(),
+            responseTime,
+            waitingTime,
+            turnaroundTime,
+            executionTime,
+            order.getQueueLevel()
+        ));
+        writer.close();
 
-        //FCFS
 
-        //SJF
-
-        //Priority
-
-        //MLFQ
+   
     }
 
 }
