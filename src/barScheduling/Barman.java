@@ -380,12 +380,14 @@ public class Barman extends Thread {
          totalDrinksServed++;
         try(FileWriter throughputWriter = new FileWriter(folder + File.separator + "ThroughputData_"+schedulerName+".csv",true)){
             File throughputFile = new File(tFileName);
+
             if(throughputFile.length() == 0){
-                throughputWriter.write(String.format("%d,%d\n",
+               throughputWriter.write("completionTime,totalDrinksServed\n"); 
+            }
+            throughputWriter.write(String.format("%d,%d\n",
                     completionTime,
                     totalDrinksServed
                 ));
-            }
         }
 
 
