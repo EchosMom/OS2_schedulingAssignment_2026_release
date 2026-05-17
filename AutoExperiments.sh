@@ -2,7 +2,7 @@
 
 PATRONS = (7 25 35 50 100 200 250)
 SCHEDULERS = (0 1 2 3 )
-RUNS = 5
+RUNS = 10
 
 for patrons in "${PATRONS[@]}"; do  
     for shedulers in "${SCHEDULERS[@]}"; do
