@@ -342,18 +342,18 @@ public class Barman extends Thread {
     	// THIS IS THE ONLY FUNCTION YOU MAY CHANGE
         //this is where the data collection for testing and stuff goes
 
-        long arrivalTime =order.getArrivalTime();
-        long startTime = order.getServiceStartTime();
-        long completionTime = order.getCompletionTime();
+        //long arrivalTime =order.getArrivalTime();
+        //long startTime = order.getServiceStartTime();
+        //long completionTime = order.getCompletionTime();
         long waitingTime = order.getWaitingTime();
         long responseTime = order.getResponseTime();
         long turnaroundTime = order.getTurnaroundTime();
         long executionTime = order.getExecutionTime();
-        long imbilingTime = order.getImbibingTime();
+        //long imbilingTime = order.getImbibingTime();
 
         //write results into CVS files
-        File allResults = new File("Results");
-        String fileName = "Results" + schedulerName +".csv" ;
+        File folder = new File("results");
+        String fileName = folder + File.separator + schedulerName +".csv" ;
         
         FileWriter writer = new FileWriter(fileName, true);
         File file = new File(fileName);
