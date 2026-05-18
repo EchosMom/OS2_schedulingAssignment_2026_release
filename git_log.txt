@@ -1,3 +1,51 @@
+commit 89c4c1a8854d115f2142a365e2c1380e4e737f44
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Mon May 18 08:13:35 2026 +0200
+
+    graphs made
+
+commit 51b607dcdca5cc2cbd63f61942c9c24e1d24db6a
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Sun May 17 20:06:13 2026 +0200
+
+    yippie data collected correctly
+
+commit 8c1ed07c1005d75e8841355c119e796e5bc547fe
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Sun May 17 17:52:15 2026 +0200
+
+    sign
+
+commit d232e7911538e80e14fa741bf8f554c41513146d
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Sun May 17 17:51:57 2026 +0200
+
+    trhoughput write debug, this is so sad i have to rerun everythings i want to cry
+
+commit 93a27799ae13637b9af097fb69e065ca9b9cfaa2
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Sun May 17 17:41:42 2026 +0200
+
+    all runs complete
+
+commit f79caed6ba4ab8019dc07d51de6a23a886256959
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Sun May 17 15:16:06 2026 +0200
+
+    debugging autoscript
+
+commit 16a86a516c79726a2554322cf89a923bfd32ca6d
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Sun May 17 15:00:50 2026 +0200
+
+    script editing
+
+commit b52e4c6967e3bfcf88fadf7cc8654100e3956dc4
+Author: EchosMom <zahrasalie2004@gmail.com>
+Date:   Sun May 17 14:52:37 2026 +0200
+
+    added sutomanted shell to run tests
+
 commit 0afedd8e6f39bff5e2e4307fb4ec7704e01a8924
 Author: EchosMom <zahrasalie2004@gmail.com>
 Date:   Sun May 17 11:51:42 2026 +0200
